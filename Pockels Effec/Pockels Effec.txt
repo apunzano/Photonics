@@ -1,0 +1,384 @@
+\documentclass[10pt,a4paper]{article}
+
+% --- Packages ---
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[a4paper,top=1.25cm,bottom=2cm,left=2.2cm,right=2.2cm,
+            marginparwidth=1.5cm]{geometry}
+
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+
+% --- Mathematics ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% --- Formatting ---
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{makecell}
+\usepackage{multirow}
+
+% --- Authors and Affiliations ---
+\usepackage{authblk}
+\renewcommand\Authsep{, }
+\renewcommand\Authand{ and }
+\renewcommand\Authands{ and }
+
+% --- Links and References ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=blue
+}
+
+% --- Title ---
+\title{\textbf{Laboratory Report: The Pockels Effect}}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{multicols}{2}
+
+\section{Introduction}
+
+The Pockels effect is a linear electro-optic phenomenon in which the
+birefringence of an anisotropic material changes when an external
+electric field is applied. This effect is related to the Kerr effect,
+although in the latter case, the induced birefringence depends
+quadratically, rather than linearly, on the electric field intensity.
+
+For symmetry reasons, the Pockels effect can only occur in crystals
+that lack a centre of inversion symmetry, such as lithium niobate
+(LiNbO$_3$). This material is a negative uniaxial birefringent crystal
+with refractive indices
+
+\[
+n_o = 2.29 \qquad \text{(ordinary)}
+\]
+\[
+n_e = 2.20 \qquad \text{(extraordinary)}
+\]
+
+measured at the He-Ne laser wavelength
+$\lambda_0 = 632.8\,\mathrm{nm}$.
+
+Since the crystal is approximately $20\,\mathrm{mm}$ long, its total
+birefringence can be expressed as
+
+\[
+\Delta n = n_e-n_o = -0.09.
+\]
+
+The corresponding number of wavelengths of phase difference across
+the crystal is approximately
+
+\[
+\frac{L(n_o-n_e)}{\lambda_0}
+=
+\frac{20 \times 0.09}{632.8\times10^{-6}}
+\approx 2840.
+\]
+
+In this experiment, the Pockels effect was investigated by observing
+conoscopic interference patterns produced by the ordinary and
+extraordinary waves propagating through the crystal.
+
+By varying the voltage applied to the Pockels cell, the half-wave
+voltage ($U_\pi$) was determined. This is the voltage variation
+required to switch the transmitted light intensity from a maximum
+to a minimum.
+
+Furthermore, the system's response to small voltage variations was
+experimentally investigated at different operating points. The
+resulting light intensity variations were converted into an audible
+signal, allowing the system's response to be studied acoustically.
+
+\subsection{Experimental Setup}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.465\textwidth]{image.png}
+    \caption{The two lenses (a: $f'=5\,\mathrm{mm}$,
+    b: $f'=50\,\mathrm{mm}$) focus the laser beam, producing a
+    narrow-angle cone inside the Pockels cell (c). An analyser (d)
+    is placed after the cell. Unlike the configuration shown in
+    the figure, the laser used in our experimental setup is
+    unpolarised. Therefore, an additional linear polariser is
+    placed before lens (a).}
+    \label{fig:experimental_setup}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.465\textwidth]{m2.png}
+    \caption{In this configuration, the laser beam is sent directly
+    through the setup after being vertically polarised by the
+    linear polariser. The beam propagates along the axis of the
+    experimental setup, corresponding to the axis of the incident
+    cone in the previous configuration. The Pockels cell (a) is
+    positioned at $45^\circ$ with respect to the vertical plane,
+    while the analyser (b) is aligned vertically, parallel to the
+    first linear polariser ($\theta=45^\circ$,
+    $\alpha=0^\circ$). The transmitted intensity therefore
+    depends on the applied voltage according to the previously
+    described $I(U)$ curve. It is measured using the detector (c),
+    which is connected to a loudspeaker through an amplifier.}
+    \label{fig:voltage_setup}
+\end{figure}
+
+\section{Results}
+
+\subsection{Voltage Values at Maximum and Minimum Intensities
+and Calculation of $U_\pi$}
+
+Starting from the configuration
+$\theta=45^\circ$ and $\alpha=0^\circ$, the voltage $U$ applied
+to the Pockels cell was gradually increased. The maxima and minima
+of the intensity at the centre of the conoscopic interference
+pattern were then identified visually and recorded.
+
+The voltage was measured using a voltmeter connected to a voltage
+divider with a conversion factor of $8.3$. Consequently, the actual
+voltage applied to the cell was obtained by multiplying the
+voltmeter readings by this factor.
+
+The resulting voltage values for each maximum and minimum are
+presented in Table 1.
+
+\begin{table}[H]
+\centering
+\caption{Voltage values corresponding to the observed intensity.}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|}
+\hline
+\multirow{2}{*}{\textbf{Extremum}} &
+\textbf{Measured} &
+\textbf{Applied} \\
+& \textbf{Voltage (V)} & \textbf{Voltage (V)} \\
+\hline
+Minimum 1 & 0.0 & 0.0\\
+Maximum 1 & 55.1 & 457.3\\
+Minimum 2 & 97.4 & 808.4\\
+Maximum 2 & 134.6 & 1117.2\\
+Minimum 3 & 174.9 & 1451.7\\
+Maximum 3 & 212.1 & 1760.4\\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+The half-wave voltage $U_\pi$ is defined as the voltage variation
+required to move from a maximum to the consecutive minimum, or
+vice versa.
+
+Taking the average of the five consecutive voltage intervals
+gives
+
+\[
+U_\pi =
+\frac{1}{5}\sum_{i=1}^{5}|U_{i+1}-U_i|
+=
+\frac{1760.4-0.0}{5}
+=
+\mathbf{352.1\,V}.
+\]
+
+The individual voltage differences between consecutive extrema
+are $457.3\,\mathrm{V}$, $351.1\,\mathrm{V}$,
+$308.8\,\mathrm{V}$, $334.5\,\mathrm{V}$ and
+$308.8\,\mathrm{V}$.
+
+A certain degree of dispersion can be observed, particularly in
+the first interval, whose voltage difference is considerably
+larger than the remaining values. This discrepancy may be
+attributed to the difficulty of visually identifying the exact
+positions of the intensity extrema or to possible instrumental
+limitations.
+
+Nevertheless, all recorded measurements were included in the
+calculation of the average half-wave voltage.
+
+\subsection{Uncertainty and Error Analysis}
+
+The voltmeter uncertainty was assumed to be
+$\pm0.1\,\mathrm{V}$. Considering the voltage divider conversion
+factor of $8.3$, the uncertainty in the applied voltage is
+
+\[
+\delta U = 8.3 \times 0.1 = 0.83\,\mathrm{V}.
+\]
+
+For each voltage interval, the propagated uncertainty is
+
+\[
+\delta D =
+\sqrt{(0.83)^2+(0.83)^2}
+\approx 1.17\,\mathrm{V}.
+\]
+
+Therefore, each individual voltage difference has an uncertainty
+of approximately $\pm1.2\,\mathrm{V}$.
+
+For the half-wave voltage calculated from the first and last
+measurements, the propagated instrumental uncertainty is
+
+\[
+\delta U_\pi =
+\frac{1}{5}
+\sqrt{(0.83)^2+(0.83)^2}
+\approx 0.23\,\mathrm{V}.
+\]
+
+However, the main source of uncertainty is the dispersion
+between the five measured voltage intervals. Their sample
+standard deviation is
+
+\[
+s =
+\sqrt{\frac{\sum_{i=1}^{5}(D_i-\bar D)^2}{5-1}}
+\approx 61.5\,\mathrm{V}.
+\]
+
+Consequently, the standard error of the mean is
+
+\[
+\delta U_\pi^{\mathrm{stat}}
+=
+\frac{s}{\sqrt{5}}
+\approx 27.5\,\mathrm{V}.
+\]
+
+Since this statistical uncertainty is considerably larger than
+the instrumental uncertainty, it dominates the final result.
+Therefore, the half-wave voltage is reported as
+
+\[
+\boxed{U_\pi=(352\pm28)\,\mathrm{V}}.
+\]
+
+The relatively large uncertainty is mainly due to the first
+interval, which differs significantly from the other
+measurements.
+
+\subsection{Explanation of the Observations in Section D2}
+
+When the analyser was rotated from $0^\circ$ to $90^\circ$,
+the intensity maxima and minima were observed to interchange.
+This behaviour occurs because the transmitted intensities are
+complementary:
+
+\begin{align}
+I(\theta=45^\circ,\alpha=0^\circ)
+&=
+\frac{E^2}{2}
+\left\{1+\cos(\Delta\phi)\right\}
+\\[1em]
+I(\theta=45^\circ,\alpha=90^\circ)
+&=
+\frac{E^2}{2}
+\left\{1-\cos(\Delta\phi)\right\}.
+\end{align}
+
+On the other hand, at an analyser angle of $45^\circ$, the
+interference fringes almost completely disappeared. This occurs
+because the analyser selects one of the principal modes of the
+crystal, preventing interference between the two polarisation
+components.
+
+Finally, rotating the input polariser modified the contrast of
+the observed patterns. When the incident polarisation was aligned
+with one of the principal axes of the crystal, only one mode was
+excited, and the intensity modulation disappeared.
+
+\begin{figure}[htbp]
+    \centering
+
+    \begin{subfigure}[b]{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth,height=6cm,
+                         keepaspectratio]{image2.png}
+        \caption{Pattern without clearly defined interference
+        fringes.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth,height=6cm,
+                         keepaspectratio]{image1.png}
+        \caption{Conoscopic pattern with visible interference
+        fringes.}
+    \end{subfigure}
+
+    \caption{Experimental patterns observed when varying the
+    configuration of the polarisers.}
+    \label{fig:conoscopic_patterns}
+\end{figure}
+
+\subsection{Discussion of the Acoustic Observations in Section D3}
+
+When small voltage variations were applied, the resulting sound
+was observed to be very weak at the intensity maxima and minima
+(points b and c), whereas it became considerably louder in the
+regions of maximum slope (point a).
+
+This behaviour can be explained by the relationship
+
+\begin{align}
+    \delta I \simeq
+    \frac{dI}{dU}\delta U.
+\end{align}
+
+At the extrema of the intensity curve, where
+$dI/dU\simeq0$, the intensity modulation is minimal and the
+sound almost disappears.
+
+Conversely, in regions where the slope is maximum, even small
+voltage variations produce significant changes in light intensity,
+resulting in a stronger acoustic signal.
+
+\section{Conclusions}
+
+This experiment has allowed us to experimentally verify the
+Pockels effect in a LiNbO$_3$ crystal by identifying the intensity
+maxima and minima and determining a half-wave voltage of
+$U_\pi=(352\pm28)\,\mathrm{V}$. The uncertainty is mainly
+associated with the dispersion between consecutive voltage
+intervals, while the instrumental contribution is negligible.
+
+Despite the dispersion observed in some measurements,
+particularly in the first interval, the results exhibit periodic
+behaviour consistent with the theoretical predictions.
+
+It was also confirmed that the transmitted light intensity
+depends on the phase difference between the two polarisation
+components, which is induced by the applied electric field.
+
+Furthermore, the acoustic measurements qualitatively confirmed
+that the intensity modulation is greatest in the regions with
+the steepest slope of the $I(U)$ curve and smallest at its
+extrema.
+
+Overall, the experimental results are consistent with the
+theoretical description of the Pockels effect and with the
+expected behaviour of an electro-optic modulator.
+
+\end{multicols}
+
+\end{document}
